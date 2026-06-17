@@ -1,10 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
-   <children>
-      <TextField text="Nombre del producto" />
-   </children>
-</AnchorPane>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tarea.tienda.ProductoController"
+      spacing="15"
+      alignment="TOP_CENTER">
+
+   <padding>
+      <Insets top="20" right="20" bottom="20" left="20"/>
+   </padding>
+
+   <Label text="GESTIÓN DE PRODUCTOS"
+          styleClass="titulo"/>
+
+   <TextField fx:id="txtNombre"
+              promptText="Nombre del producto"/>
+
+   <TextField fx:id="txtPrecio"
+              promptText="Precio"/>
+
+   <TextField fx:id="txtStock"
+              promptText="Stock"/>
+
+   <HBox spacing="10"
+         alignment="CENTER">
+
+      <Button text="Guardar"
+              onAction="#guardar"
+              styleClass="btn-guardar"/>
+
+      <Button text="Mostrar"
+              onAction="#mostrar"
+              styleClass="btn-mostrar"/>
+
+      <Button text="Limpiar"
+              onAction="#limpiar"
+              styleClass="btn-limpiar"/>
+
+      <Button text="Salir"
+              onAction="#salir"
+              styleClass="btn-salir"/>
+
+   </HBox>
+
+   <Label fx:id="lblMsg"/>
+
+   <TableView fx:id="tblProductos"
+              prefHeight="350"
+              prefWidth="700">
+
+      <columns>
+
+         <TableColumn fx:id="colId"
+                      text="ID"
+                      prefWidth="70"/>
+
+         <TableColumn fx:id="colNombre"
+                      text="Nombre"
+                      prefWidth="250"/>
+
+         <TableColumn fx:id="colPrecio"
+                      text="Precio"
+                      prefWidth="150"/>
+
+         <TableColumn fx:id="colStock"
+                      text="Stock"
+                      prefWidth="150"/>
+
+      </columns>
+
+   </TableView>
+
+</VBox>
